@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="1" name="Realizar recarga exitosa a cliente movil exito" skipped="0" tests="1" time="98.72" timestamp="2025-03-18 06:46:31"><testcase name="Ser realice una recarga exitosa a un numero movil del exito"><failure message="Expected condition failed: waiting for By.xpath: //*[@id='recaptcha-anchor']/div[1] to be present (tried for 5 second(s) with 100 milliseconds interval)&#10;Build info: version: '4.27.0', revision: 'd6e718d134'&#10;System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-45-generic', java.version: '17.0.14'&#10;Driver info: driver.version: unknown" type="net.thucydides.core.webdriver.exceptions.ElementShouldBePresentException">Expected condition failed: waiting for By.xpath: //*[@id='recaptcha-anchor']/div[1] to be present (tried for 5 second(s) with 100 milliseconds interval)
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-45-generic', java.version: '17.0.14'
+Driver info: driver.version: unknown</failure><system-err>Expected condition failed: waiting for By.xpath: //*[@id='recaptcha-anchor']/div[1] to be present (tried for 5 second(s) with 100 milliseconds interval)
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-45-generic', java.version: '17.0.14'
+Driver info: driver.version: unknown
+com.co.movil_exito.tasks.recargas.LlenarFormulario.performAs(LlenarFormulario.java:32)
+com.co.movil_exito.stepdefinitions.recargaExitosaDeUnLlinea.realiza_el_proceso_de_pago(recargaExitosaDeUnLlinea.java:26)
+worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+</system-err></testcase></testsuite>
