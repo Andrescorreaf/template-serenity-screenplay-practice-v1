@@ -1,5 +1,6 @@
 package com.co.movil_exito.stepdefinitions;
 
+import com.co.movil_exito.tasks.recargas.CerraModalDonacion;
 import com.co.movil_exito.tasks.recargas.LlenarFormulario;
 import com.co.movil_exito.userinterface.home.homePage;
 import io.cucumber.java.es.Cuando;
@@ -24,6 +25,7 @@ public class recargaExitosaDeUnLlinea {
     public void realiza_el_proceso_de_pago( ){
         // Write code here that turns the phrase above into concrete action
         theActorInTheSpotlight().attemptsTo(LlenarFormulario.con("3148707675","CC","1234567","Andres Frank","test@seed.co","no"));
+        theActorInTheSpotlight().attemptsTo(CerraModalDonacion.cerarModal());
 
     }
     @Entonces("espero ver un un texto de confirmacion exitoso")

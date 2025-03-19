@@ -3,6 +3,7 @@ build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
+target
 
 ### IntelliJ IDEA ###
 .idea/modules.xml
@@ -48,3 +49,4 @@ chromedriver-linux64
 *.bin
 *.zip
 
+ target/site/serenity/browser-chrome.properties

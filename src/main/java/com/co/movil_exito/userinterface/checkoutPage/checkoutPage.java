@@ -3,8 +3,8 @@ package com.co.movil_exito.userinterface.checkoutPage;
 import net.serenitybdd.core.annotations.findby.By;
 import net.serenitybdd.screenplay.targets.Target;
 
-public class checkoutpage {
-        private checkoutpage() {
+public class checkoutPage {
+        private checkoutPage() {
 
         }
 
