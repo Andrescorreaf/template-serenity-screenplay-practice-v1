@@ -21,9 +21,9 @@ public class recargaExitosaDeUnLlinea {
 
     }
     @Cuando("realiza el proceso de pago")
-    public void realiza_el_proceso_de_pago() {
-        // Write code here that turns the phrase above into concrete actions
-        theActorInTheSpotlight().attemptsTo(LlenarFormulario.con("3148707675","CC","1234567","Andres Frank","test@seed.co"));
+    public void realiza_el_proceso_de_pago( ){
+        // Write code here that turns the phrase above into concrete action
+        theActorInTheSpotlight().attemptsTo(LlenarFormulario.con("3148707675","CC","1234567","Andres Frank","test@seed.co","no"));
 
     }
     @Entonces("espero ver un un texto de confirmacion exitoso")
@@ -35,3 +35,5 @@ public class recargaExitosaDeUnLlinea {
     }
 
 }
+
+

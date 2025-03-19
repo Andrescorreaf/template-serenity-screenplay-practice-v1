@@ -15,6 +15,7 @@ public class checkoutpage {
         public static final Target INPUT_CORREO = Target.the("Campo de correo electronico").located(By.xpath("//*[@id=\"edit-order-fieldsdata-recopilation-field-email-0-value\"]"));
         public static final Target CHECK_PUBLICIDAD = Target.the("checkbox de autorización de publicidad").located(By.xpath("//*[@id='edit-order-fieldsdata-recopilation-field-publicidad-value']"));
         public static final Target CHECK_LEGAL = Target.the("checkbox de aceptación de términos legales").located(By.xpath("//*[@id='edit-order-fieldsdata-recopilation-field-legal-value']"));
+        public static final Target IFRAME_RECAPTCHA = Target.the("iframe del recaptcha").located(By.cssSelector("iframe[title='reCAPTCHA']"));
         public static final Target CHECK_RECAPTCHA = Target.the("checkbox de recaptcha").located(By.xpath("//*[@id='recaptcha-anchor']/div[1]"));
         public static final Target BOTON_CONTINUAR = Target.the("botón de continuar").located(By.xpath("//*[@id='edit-actions-next']"));
 }
