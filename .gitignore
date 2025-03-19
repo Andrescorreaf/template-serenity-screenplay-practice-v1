@@ -43,6 +43,7 @@ bin/
 
 ## Linux
 chromedriver-*/
+chromedriver-linux64
 *.exe
 *.bin
 *.zip
