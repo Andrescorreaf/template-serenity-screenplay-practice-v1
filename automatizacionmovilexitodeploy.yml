@@ -1,0 +1,103 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+trigger:
+  branches:
+    include:
+      - develop
+      - QA
+      - produccion
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  environment: $[ 
+    eq(variables['Build.SourceBranchName'], 'develop') ? 'dev' :
+    eq(variables['Build.SourceBranchName'], 'QA') ? 'qa' :
+    eq(variables['Build.SourceBranchName'], 'produccion') ? 'prod' : 'local'
+    ]
+
+strategy:
+  parallel: 3
+
+steps:
+  - task: UseJava@1
+    inputs:
+      versionSpec: '17'
+      jdkArchitecture: 'x64'
+      jdkSourceOption: 'PreInstalled'
+
+  - script: chmod +x gradlew
+    displayName: 'Dar permisos a gradlew'
+
+  - task: Gradle@2
+    displayName: 'Ejecutar tests slice $(System.JobPositionInPhase)'
+    inputs:
+      gradleWrapperFile: 'gradlew'
+      tasks: >
+        clean test aggregate
+        -Denvironment=${{ variables.environment }}
+        -Dtest.slice=$(System.JobPositionInPhase)
+        -Dtest.totalSlices=$(System.TotalJobsInPhase)
+
+  - task: PublishTestResults@2
+    displayName: 'Publicar resultados JUnit'
+    inputs:
+      testResultsFormat: 'JUnit'
+      testResultsFiles: '**/TEST-*.xml'
+      searchFolder: '$(System.DefaultWorkingDirectory)'
+
+  - task: PublishBuildArtifacts@1
+    displayName: 'Publicar reporte HTML'
+    inputs:
+      pathToPublish: 'build/reports/serenity'
+      artifactName: 'SerenityReport-$(System.JobPositionInPhase)'
+
+- job: UnirReportes
+  dependsOn: []
+  condition: succeeded()
+  pool:
+    vmImage: 'ubuntu-latest'
+
+  steps:
+    - task: UseJava@1
+      inputs:
+        versionSpec: '17'
+        jdkArchitecture: 'x64'
+        jdkSourceOption: 'PreInstalled'
+
+    - script: |
+        mkdir -p merged-json
+        for i in $(seq 0 $(( $(System.TotalJobsInPhase) - 1 ))); do
+          mkdir -p "report-$i"
+          echo "##vso[artifact.download artifactName=SerenityReport-$i;targetPath=report-$i]"
+        done
+      displayName: 'Descargar todos los artefactos'
+
+    - script: |
+        mkdir -p build/serenity-merged
+        find . -type f -name "serenity*.json" -exec cp {} build/serenity-merged/ \;
+      displayName: 'Combinar todos los archivos JSON'
+
+    - script: ./gradlew aggregate
+      displayName: 'Generar reporte unificado'
+
+    - task: PublishBuildArtifacts@1
+      displayName: 'Publicar reporte Serenity combinado'
+      inputs:
+        pathToPublish: 'build/reports/serenity'
+        artifactName: 'SerenityReport-Final'
+
+    - task: PowerShell@2
+      displayName: 'Adjuntar reporte Serenity al resumen del pipeline'
+      inputs:
+        targetType: 'inline'
+        script: |
+          $reportPath = "$(System.DefaultWorkingDirectory)/build/reports/serenity/index.html"
+          if (Test-Path $reportPath) {
+            Write-Host "##vso[task.addattachment type=Distributedtask.Core.Summary;name=Reporte Unificado Serenity;]$reportPath"
+          } else {
+            Write-Host "No se encontró el reporte"
+          }
