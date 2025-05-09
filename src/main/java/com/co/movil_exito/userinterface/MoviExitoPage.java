@@ -5,4 +5,5 @@ import net.serenitybdd.core.pages.PageObject;
 
 @DefaultUrl("https://qa-movilexitopairing.us.seedcloud.co/")
 public class MoviExitoPage extends PageObject {
+
 }

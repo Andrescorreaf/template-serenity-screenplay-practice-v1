@@ -1,20 +1,80 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+# Automatización de Recarga Móvil - Éxito 
+Este proyecto implementa pruebas automatizadas de extremo a extremo utilizando **Serenity BDD**, **Screenplay Pattern**, **Cucumber (Gherkin)** y **Gradle**. El objetivo principal es validar el flujo de una **recarga móvil** en el portal de Éxito.
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+#  🛠 Tecnologías
+- ✅ **Java 11+**
+- ✅ **Serenity BDD**
+- ✅ **Screenplay Pattern**
+- ✅ **Cucumber / Gherkin**
+- ✅ **Gradle**
+- ✅ **JUnit**
+- ✅ **WebDriver (Selenium)**
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+## 🎯 Objetivo del Proyecto
+Automatizar el flujo de una **recarga móvil en el portal de Éxito**, validando paso a paso:
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+1. Ingreso al sitio.
+2. Navegación al módulo de recargas.
+3. Selección del operador móvil.
+4. Ingreso del número y monto a recargar.
+5. Validación de la transacción y mensajes esperados.
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+
+## 📁 Estructura del Proyecto
+```bash
+src
+└── main
+    └──java
+         └──com.co.movi_exito
+            └──interactions
+            └──questions
+            └──tasks
+            └──utils
+            └──userinterfaces   
+└── test
+    └── java
+    |    └──com.co.movi_exito
+    |       └──runners
+    |       └──stepdefinitions
+    |    
+    |                   
+    └── resources
+        └── features
+            └── recarga # Escenarios en Gherkin
+                ├── recarga_movil.feature
+
+```
+## 🧪 Cómo ejecutar las pruebas
+**▶️ Desde la terminal:**
+``` bash
+  ./gradlew clean test aggregate
+```
+
+**▶️ Desde un runner específico (opcional):**
+``` bash
+  ./gradlew clean test --tests "co.com.exito.runners.RecargaMovilRunner"
+```
+**📄 Reporte de Serenity**
+
+Después de ejecutar las pruebas, abre el siguiente archivo en tu navegador para ver el reporte:
+
+``` 
+  target/site/serenity/index.html
+```
+
+## 💡 Buenas prácticas aplicadas
+
+* Diseño por capas Screenplay
+* Código limpio y reutilizable
+* Separación entre lógica de automatización y negocio
+* Validaciones desacopladas usando Questions
+
+## 🧑‍💻 Autor
+Andres Correa
+
+* 📧 felipefrano989@gmail.com
+* 🌐 github.com/Andrescorreaf
+
+## 🛡 Licencia
+
+Este proyecto es de uso libre bajo la Licencia MIT.
