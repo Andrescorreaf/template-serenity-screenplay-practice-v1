@@ -9,5 +9,5 @@ public class paqutes {
     }
 
     public static final Target BTN_COMPRA_PAQUETE = Target.the("Botón para ir al modal de selccionar cantidad de linea").located(By.xpath("//*[@id=\"Paquete-$24.900\"]"));
-    public static final Target BTN_CONTINUAR_MODAL_SELECT_LINEA = Target.the("Boton conitnua del modal seleccionar linea").located(org.openqa.selenium.By.xpath("/html/body/div[14]/div[3]/div/button[2]"));
+    public static final Target BTN_CONTINUAR_MODAL_SELECT_LINEA = Target.the("Boton conitnuar del modal seleccionar linea").located(org.openqa.selenium.By.xpath("//div[@class=\"ui-dialog-buttonset form-actions\"]/button[contains(text(), \"Continuar\")]"));
 }

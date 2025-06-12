@@ -1,7 +1,7 @@
 package com.co.movil_exito.userinterface.modalDonacionPage;
 
-import net.serenitybdd.screenplay.targets.Target;
 import net.serenitybdd.core.annotations.findby.By;
+import net.serenitybdd.screenplay.targets.Target;
 
 public class modalDonacionPage {
     private modalDonacionPage() {

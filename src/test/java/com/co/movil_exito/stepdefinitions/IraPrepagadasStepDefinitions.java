@@ -34,21 +34,21 @@ public class IraPrepagadasStepDefinitions {
 
 
     @Dado("que el usuario se encuentra en la pagina de home")
-    public void que_el_usuario_se_encuentra_en_la_pagina_de_home() {
+    public void que_el_usuario_se_encuentra_en_la_pagina_de_home(Actor Andres) {
         // Write code here that turns the phrase above into concrete actions
-        theActorInTheSpotlight().wasAbleTo(irahome());
+        Andres.wasAbleTo(irahome());
     }
 
     @Cuando("el usuario hace clic en el boton prepagadas")
-    public void el_usuario_hace_clic_en_el_boton_prepagadas() {
+    public void el_usuario_hace_clic_en_el_boton_prepagadas(Actor Andres) {
         // Write code here that turns the phrase above into concrete actions
-        theActorInTheSpotlight().wasAbleTo(hacerclicken());
+        Andres.wasAbleTo(hacerclicken());
     }
 
     @Entonces("el usuario debe ser direccionado a la pagina y debe ver el titulo Paquetes Prepagados")
-    public void el_usuario_debe_ser_direccionado_a_la_pagina_y_debe_ver_el_titulo_paquetes_prepagados() {
+    public void el_usuario_debe_ser_direccionado_a_la_pagina_y_debe_ver_el_titulo_paquetes_prepagados(Actor Andres) {
         // Write code here that turns the phrase above into concrete actions
-        theActorInTheSpotlight().attemptsTo(
+        Andres.attemptsTo(
                 Ensure.that(homePage.TITULO_PAQUETES_PREPAGADOS).text().isEqualTo("Paquetes Prepagados")
         );
     }
