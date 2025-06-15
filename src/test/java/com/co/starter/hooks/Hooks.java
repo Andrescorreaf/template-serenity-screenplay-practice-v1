@@ -1,4 +1,4 @@
-package com.co.movil_exito.hooks;
+package com.co.starter.hooks;
 
 import io.cucumber.java.Before;
 import net.serenitybdd.screenplay.actors.OnStage;

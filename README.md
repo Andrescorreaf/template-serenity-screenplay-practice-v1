@@ -1,5 +1,5 @@
-# Automatización de Recarga Móvil - Éxito 
-Este proyecto implementa pruebas automatizadas de extremo a extremo utilizando **Serenity BDD**, **Screenplay Pattern**, **Cucumber (Gherkin)** y **Gradle**. El objetivo principal es validar el flujo de una **recarga móvil** en el portal de Éxito.
+# Plantilla de Automatización con SernityBDD - Screenplay - cucumber - gherkin - gradle - Java. Projecto perosnal
+Este proyecto implementa pruebas automatizadas de extremo a extremo utilizando **Serenity BDD**, **Screenplay Pattern**, **Cucumber (Gherkin)** y **Gradle**. El objetivo principal es validar el flujo de una **crear un usuario** en x portal.
 
 #  🛠 Tecnologías
 - ✅ **Java 11+**
@@ -14,10 +14,9 @@ Este proyecto implementa pruebas automatizadas de extremo a extremo utilizando *
 Automatizar el flujo de una **recarga móvil en el portal de Éxito**, validando paso a paso:
 
 1. Ingreso al sitio.
-2. Navegación al módulo de recargas.
-3. Selección del operador móvil.
-4. Ingreso del número y monto a recargar.
-5. Validación de la transacción y mensajes esperados.
+2. ingresar datos de registro
+3. Clic en enviar formulario
+4. Validación de crear usuario exitoso
 
 
 ## 📁 Estructura del Proyecto
@@ -25,7 +24,7 @@ Automatizar el flujo de una **recarga móvil en el portal de Éxito**, validando
 src
 └── main
     └──java
-         └──com.co.movi_exito
+         └──com.co.starter
             └──interactions
             └──questions
             └──tasks
@@ -33,7 +32,7 @@ src
             └──userinterfaces   
 └── test
     └── java
-    |    └──com.co.movi_exito
+    |    └──com.co.starter
     |       └──runners
     |       └──stepdefinitions
     |    
@@ -41,7 +40,7 @@ src
     └── resources
         └── features
             └── recarga # Escenarios en Gherkin
-                ├── recarga_movil.feature
+                ├── crear_usuario.feature
 
 ```
 ## 🧪 Cómo ejecutar las pruebas

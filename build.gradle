@@ -8,7 +8,7 @@ tasks.withType(JavaCompile).configureEach {
 }
 
 defaultTasks 'clean', 'test', 'aggregate'
-group = 'com.co.movil_exito'
+group = 'proyecto-serenity-gradle-practice-v2'
 version = '1.0-SNAPSHOT'
 
 repositories {
