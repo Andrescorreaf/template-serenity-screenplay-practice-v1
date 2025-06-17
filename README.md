@@ -11,7 +11,7 @@ Este proyecto implementa pruebas automatizadas de extremo a extremo utilizando *
 - ✅ **WebDriver (Selenium)**
 
 ## 🎯 Objetivo del Proyecto
-Automatizar el flujo de una **recarga móvil en el portal de Éxito**, validando paso a paso:
+Automatizar el flujo de  **crear un usuario exitoso**, validando paso a paso:
 
 1. Ingreso al sitio.
 2. ingresar datos de registro
