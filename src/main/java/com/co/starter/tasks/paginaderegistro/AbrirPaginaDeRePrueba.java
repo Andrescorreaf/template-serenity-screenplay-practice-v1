@@ -8,7 +8,7 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 import com.co.starter.transversal.PagDeRegistro;
 import net.serenitybdd.screenplay.Performable;
 
-public class AbrirPaginaDeRegistro implements Performable {
+public class AbrirPaginaDeRePrueba implements Performable {
 
 
     @Override
@@ -17,8 +17,8 @@ public class AbrirPaginaDeRegistro implements Performable {
         actor.attemptsTo(Open.browserOn().the(PagDeRegistro.class));
     }
 
-    public static AbrirPaginaDeRegistro abrir() {
-        return instrumented(AbrirPaginaDeRegistro.class);
+    public static AbrirPaginaDeRePrueba abrir() {
+        return instrumented(AbrirPaginaDeRePrueba.class);
     }
    
 }

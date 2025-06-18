@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-        features = "src/test/resources/features/usuario/crear_usuario.feature", // Ruta de las características (features)
+        features = "src/test/resources/features/usuario/questionario/responder_cuestionario.feature", // Ruta de las características (features)
         glue = {
                 "com.co.starter.stepdefinitions", // Paquete donde están los step definitions
                 "com.co.starter.hooks" // Paquete donde están los hooks
